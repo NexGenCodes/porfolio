@@ -47,16 +47,20 @@ export function ContactForm() {
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
-
+    const mailtoLink = `mailto:emmanuelforchinagorom@gmail.com?subject=${encodeURIComponent(
+      values.subject
+    )}&body=${encodeURIComponent(
+      `Name: ${values.name}\nEmail: ${values.email}\n\n${values.message}`
+    )}`;
     // Simulate form submission
     setTimeout(() => {
-      console.log(values);
       toast({
         title: "Message sent!",
         description: "Thank you for your message. I'll get back to you soon.",
       });
       form.reset();
       setIsSubmitting(false);
+      window.location.href = mailtoLink;
     }, 1500);
   }
 
