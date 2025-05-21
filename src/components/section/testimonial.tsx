@@ -2,10 +2,11 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
+// import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { testimonials } from "@/constants/testimonial";
+import { Quote } from "lucide-react";
 
 export function TestimonialsSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -14,16 +15,16 @@ export function TestimonialsSection() {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
   };
 
-  const prevTestimonial = () => {
-    setCurrentIndex(
-      (prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length
-    );
-  };
+  // const prevTestimonial = () => {
+  //   setCurrentIndex(
+  //     (prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length
+  //   );
+  // };
 
   useEffect(() => {
     const interval = setInterval(() => {
       nextTestimonial();
-    }, 1000);
+    }, 8000);
 
     return () => clearInterval(interval);
   }, []);
@@ -82,7 +83,7 @@ export function TestimonialsSection() {
           </Card>
 
           <div className="flex justify-center mt-8 gap-2">
-            <Button
+            {/* <Button
               variant="outline"
               size="icon"
               onClick={prevTestimonial}
@@ -90,7 +91,7 @@ export function TestimonialsSection() {
               aria-label="Previous testimonial"
             >
               <ChevronLeft className="h-4 w-4" />
-            </Button>
+            </Button> */}
 
             {testimonials.map((_, index) => (
               <Button
@@ -108,7 +109,7 @@ export function TestimonialsSection() {
               </Button>
             ))}
 
-            <Button
+            {/* <Button
               variant="outline"
               size="icon"
               onClick={nextTestimonial}
@@ -116,7 +117,7 @@ export function TestimonialsSection() {
               aria-label="Next testimonial"
             >
               <ChevronRight className="h-4 w-4" />
-            </Button>
+            </Button> */}
           </div>
         </div>
       </div>

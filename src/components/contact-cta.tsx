@@ -14,7 +14,7 @@ export function ContactCta() {
             technology and exceptional user experiences.
           </p>
           <Button size="lg" asChild>
-            <Link href="/contact">Get in Touch</Link>
+            <Link href="/contacts">Get in Touch</Link>
           </Button>
         </div>
       </div>
