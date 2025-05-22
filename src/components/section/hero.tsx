@@ -5,15 +5,14 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { init3DHeroScene } from "@/constants/three-scene";
+import initThreeScene from "@/constants/three-scene";
 
 export function HeroSection() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
     if (canvasRef.current) {
-      const cleanup = init3DHeroScene(canvasRef.current);
-      // const cleanup = initThreeScene(canvasRef.current)
+      const cleanup = initThreeScene(canvasRef.current)
       return cleanup;
     }
   }, []);

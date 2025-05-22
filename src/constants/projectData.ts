@@ -16,7 +16,7 @@ export const projects: Project[] = [
     id: "ecommerce-platform",
     title: "E-Commerce Platform",
     description:
-      "A full-featured e-commerce platform with product management, cart functionality, payment processing, and order tracking.",
+      "A full-featured e-commerce web platform with product management, cart functionality, payment processing, and order tracking.",
     image: image,
     technologies: [
       "Next.js",

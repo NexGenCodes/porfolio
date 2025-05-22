@@ -40,18 +40,6 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
               transform: isImageHovered ? "scale(1.05)" : "scale(1)",
             }}
           />
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: isImageHovered ? 1 : 0 }}
-            transition={{ duration: 0.3 }}
-            className="absolute inset-0 bg-black/70 flex items-center justify-center"
-          >
-            <Link href={`/projects/${project.id}`}>
-              <Button className="hover-scale text-xs sm:text-sm">
-                View Details
-              </Button>
-            </Link>
-          </motion.div>
         </div>
         <CardContent className="p-4 sm:p-6">
           <div className="flex flex-wrap gap-1 sm:gap-2 mb-2 sm:mb-3">

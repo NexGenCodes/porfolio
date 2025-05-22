@@ -35,7 +35,7 @@ export function SkillsSection() {
                   className="p-1.5 sm:p-2 rounded-full bg-primary/10 mb-2 sm:mb-3 light-shadow-sm"
                   aria-hidden="true"
                 >
-                  <skill.icon className="h-4 w-4 sm:h-5 sm:w-5 " />
+                  <skill.icon className="h-5 w-5 text-primary" />
                 </div>
                 <h3 className="font-medium text-center text-xs sm:text-sm">
                   {skill.name}
