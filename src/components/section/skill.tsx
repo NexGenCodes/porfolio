@@ -8,7 +8,7 @@ export function SkillsSection() {
     <Tabs defaultValue="frontend" className="w-full">
       <div className="flex justify-center overflow-x-auto pb-2">
         <TabsList
-          className="grid grid-cols-2 sm:grid-cols-4 w-full max-w-2xl light-shadow-sm"
+          className="flex flex-wrap w-full max-w-2xl light-shadow-sm"
           aria-label="Skill categories"
         >
           {Object.keys(skillCategories).map((category) => (
