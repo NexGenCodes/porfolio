@@ -11,8 +11,23 @@ export function ProjectsShowcase() {
     .filter((project) => project.featured)
     .slice(0, 3);
 
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <motion.div
+      variants={container}
+      initial="hidden"
+      animate="show"
+      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+    >
       <AnimatePresence>
         {featuredProjects.map((project, index) => (
           <motion.div
@@ -27,6 +42,6 @@ export function ProjectsShowcase() {
           </motion.div>
         ))}
       </AnimatePresence>
-    </div>
+    </motion.div>
   );
 }

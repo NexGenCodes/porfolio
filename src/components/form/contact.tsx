@@ -66,7 +66,10 @@ export function ContactForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="space-y-4 sm:space-y-6"
+      >
         <FormField
           control={form.control}
           name="name"
@@ -74,7 +77,11 @@ export function ContactForm() {
             <FormItem>
               <FormLabel>Name</FormLabel>
               <FormControl>
-                <Input placeholder="Your name" {...field} />
+                <Input
+                  placeholder="Your name"
+                  {...field}
+                  aria-required="true"
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -88,7 +95,13 @@ export function ContactForm() {
             <FormItem>
               <FormLabel>Email</FormLabel>
               <FormControl>
-                <Input placeholder="your.email@example.com" {...field} />
+                <Input
+                  type="email"
+                  placeholder="your.email@example.com"
+                  {...field}
+                  aria-required="true"
+                  autoComplete="email"
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -102,7 +115,11 @@ export function ContactForm() {
             <FormItem>
               <FormLabel>Subject</FormLabel>
               <FormControl>
-                <Input placeholder="What is this regarding?" {...field} />
+                <Input
+                  placeholder="What is this regarding?"
+                  {...field}
+                  aria-required="true"
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -120,6 +137,7 @@ export function ContactForm() {
                   placeholder="Tell me about your project or inquiry..."
                   className="min-h-[150px]"
                   {...field}
+                  aria-required="true"
                 />
               </FormControl>
               <FormMessage />
@@ -127,8 +145,18 @@ export function ContactForm() {
           )}
         />
 
-        <Button type="submit" className="w-full" disabled={isSubmitting}>
-          {isSubmitting ? "Sending..." : "Send Message"}
+        <Button type="submit" className="w-full mt-2" disabled={isSubmitting}>
+          {isSubmitting ? (
+            <span className="flex items-center gap-2">
+              <span
+                className="h-4 w-4 border-2 border-current border-t-transparent rounded-full animate-spin"
+                aria-hidden="true"
+              />
+              Sending...
+            </span>
+          ) : (
+            "Send Message"
+          )}
         </Button>
       </form>
     </Form>

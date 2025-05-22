@@ -6,6 +6,10 @@ import { ThemeProvider } from "@/components/theme/provider";
 import { ThemeSelector } from "@/components/theme/selector";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { Toaster } from "@/components/ui/toaster";
+import { PageTransition } from "@/components/pageTransition";
+import { AnimatedBackground } from "@/components/animatedBackground";
+import { EnhancedScrollProgress } from "@/components/enhancedScrollProgress";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -66,6 +70,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
           storageKey="nexgencode-theme"
         >
           <div className="relative flex min-h-screen flex-col">
+            <EnhancedScrollProgress variant="bar" position="top" />
+            <AnimatedBackground />
             <a
               href="#main-content"
               className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-background focus:text-foreground"
@@ -74,12 +80,13 @@ export default function RootLayout({ children }: RootLayoutProps) {
             </a>
             <Header />
             <main id="main-content" className="flex-1">
-              {children}
+              <PageTransition>{children}</PageTransition>
             </main>
             <Footer />
-            <div className="fixed bottom-4 right-4 z-50">
+            <div className="fixed bottom-4 right-4 z-50 bg-background/80 backdrop-blur-sm p-4 rounded-lg border shadow-md">
               <ThemeSelector />
             </div>
+            <Toaster />
           </div>
         </ThemeProvider>
       </body>
