@@ -42,7 +42,7 @@ export default function AboutPage() {
         </div>
         <div className="relative h-[300px] sm:h-[350px] md:h-[400px] rounded-lg overflow-hidden">
           <Image
-            src="/placeholder.svg?height=800&width=600"
+            src="https://placehold.co/600x800"
             alt="Professional portrait of me, a full-stack developer"
             fill
             className="object-cover"
