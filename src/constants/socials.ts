@@ -4,7 +4,7 @@ import { Github, Linkedin, Twitter } from "lucide-react";
 const socials = [
   {
     name: "GitHub",
-    href: "https://github.com/chi-na-go-rom",
+    href: "https://github.com/NexGenCodes",
     icon: Github,
   },
   {
