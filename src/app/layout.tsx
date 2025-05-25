@@ -83,7 +83,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
               <PageTransition>{children}</PageTransition>
             </main>
             <Footer />
-            <div className="fixed bottom-4 right-4 z-50 bg-background/80 backdrop-blur-sm p-4 rounded-lg border shadow-md">
+            <div className="fixed bottom-28 right-2 z-50 bg-background/80 backdrop-blur-sm p-4 rounded-lg border shadow-md">
               <ThemeSelector />
             </div>
             <Toaster />

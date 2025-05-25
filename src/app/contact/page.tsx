@@ -31,7 +31,7 @@ export default function ContactPage() {
         </p>
       </AnimatedSection>
 
-      <div className="grid md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 mt-6 sm:mt-8 md:mt-12">
+      <div className="grid md:grid-cols-2 gap-6 sm:gap-12 md:gap-12 mt-6 sm:mt-8 md:mt-12">
         <AnimatedSection animation="slide" delay={0.1}>
           <ContactInfo />
         </AnimatedSection>
